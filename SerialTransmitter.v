@@ -18,8 +18,8 @@
 */
 module SerialTransmitter
   #(
-    parameter ClockFrequency = 9000000,  // Top level clock frequency (set for frequency used by your desing)
-    parameter BaudRate       = 3000000     // Set to required baudrate (9600, 115200, 2000000, ...) can be max 1/3 of ClockFrequency
+    parameter ClockFrequency = 16000000,  // Top level clock frequency (set for frequency used by your desing)
+    parameter BaudRate       = 115200     // Set to required baudrate (9600, 115200, 2000000, ...) can be max 1/3 of ClockFrequency
   )
   (
     input  wire       iClock,      // Top level clock with frequency specified in ClockFrequency parameter
