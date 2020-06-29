@@ -1,10 +1,10 @@
 /*
 
   Basic serial transmitter (UART)
-  Designed by Stanislav Jurny 6.2020
+  Copyright (c) 2020 Stanislav Jurny (github.com/STjurny) license MIT
 
   Serial data format is 8 data bits, without parity, one stop bit (8N1) without hardware flow control.
-  Please set up parameters ClockFrequency and BaudRate to requirements of your design. 
+  Please set up parameters ClockFrequency and BaudRate to requirements of your design.
   BaudRate can be max 1/3 of ClockFrequency.
 
   Connect top level clock (on frequency in parameter ClockFrequency) to iClock. Output serial signal is on oTXD.
@@ -15,38 +15,11 @@
   the oReady signal is immediatelly set to 1 so next byte to send can be pass already during transmitting
   stop bit of previous byte. Because of that there is not any delay before transmitting next byte.
 
-  This design is provided under MIT license
-
-  -----------------------------------------------------------------
-
-  Copyright (c) 2006 Stanislav Jurny (github.com/STjurny)
-
-  Permission is hereby granted, free of charge, to any person
-  obtaining a copy of this software and associated documentation
-  files (the "Software"), to deal in the Software without
-  restriction, including without limitation the rights to use,
-  copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the
-  Software is furnished to do so, subject to the following
-  conditions:
-
-  The above copyright notice and this permission notice shall be
-  included in all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-  OTHER DEALINGS IN THE SOFTWARE.
-
 */
 module SerialTransmitter
   #(
-    parameter ClockFrequency = 16000000,  // Top level clock frequency (set for frequency used by your desing)
-    parameter BaudRate       = 115200     // Set to required baudrate (9600, 115200, 2000000, ...) can be max 1/3 of ClockFrequency
+    parameter ClockFrequency = 9000000,  // Top level clock frequency (set for frequency used by your desing)
+    parameter BaudRate       = 3000000     // Set to required baudrate (9600, 115200, 2000000, ...) can be max 1/3 of ClockFrequency
   )
   (
     input  wire       iClock,      // Top level clock with frequency specified in ClockFrequency parameter

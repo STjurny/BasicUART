@@ -1,7 +1,7 @@
 /*
 
   Basic serial receiver (UART)
-  Designed by Stanislav Jurny 6.2020
+  Copyright (c) 2020 Stanislav Jurny (github.com/STjurny) license MIT
 
   Serial data format is 8 data bits, without parity, one stop bit (8N1) without hardware flow control.
   Please set parameters ClockFrequency and BaudRate to requirements of your design.
@@ -12,33 +12,6 @@
   If an error (missing stop bit) occurs in receiving data oError is set for one clock.
 
   On iCE40 it uses about 40 LUTs and can run on 175 MHz (by Lattice iCEcube2 / Lattice LSE).
-
-  This design is provided under MIT license
-
-  -----------------------------------------------------------------
-
-  Copyright (c) 2006 Stanislav Jurny (github.com/STjurny)
-
-  Permission is hereby granted, free of charge, to any person
-  obtaining a copy of this software and associated documentation
-  files (the "Software"), to deal in the Software without
-  restriction, including without limitation the rights to use,
-  copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the
-  Software is furnished to do so, subject to the following
-  conditions:
-
-  The above copyright notice and this permission notice shall be
-  included in all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-  OTHER DEALINGS IN THE SOFTWARE.
 
 */
 module SerialReceiver
