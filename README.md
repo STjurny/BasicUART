@@ -46,7 +46,7 @@ module SerialReceiver
 
 ```
 
-Set parameters `ClockFrequency` to frequency of your system clock and `BaudRate` to requirements of your design. `BaudRate` can be max 1/3 of `ClockFrequency` (but it is recommended greater ratio). Design was succesfully tested with ratio 1/8 (`ClockFrequency=16000000` and `BaudRate=2000000`).
+Set parameters `ClockFrequency` to frequency of your system clock and `BaudRate` to requirements of your design. `BaudRate` can be max 1/3 of `ClockFrequency` (but it is recommended greater ratio). Design was succesfully tested with ratio 1/8 where `ClockFrequency=16000000` and `BaudRate=2000000`.
 
   Each time receiver receives one valid frame (byte) it makes it available on `oData` and set `oReceived` to `1` for one clock. If a break or error occurs in receiving data `oError` is set to `1` for one clock.
 
