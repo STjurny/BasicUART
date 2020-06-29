@@ -4,7 +4,8 @@
   Designed by Stanislav Jurny 6.2020
 
   Serial data format is 8 data bits, without parity, one stop bit (8N1) without hardware flow control.
-  Please set up parameters ClockFrequency and BaudRate to requirements of your design. BaudRate can be max 1/3 of ClockFrequency.
+  Please set up parameters ClockFrequency and BaudRate to requirements of your design. 
+  BaudRate can be max 1/3 of ClockFrequency.
 
   Connect top level clock (on frequency in parameter ClockFrequency) to iClock. Output serial signal is on oTXD.
   For send a byte value set iData to required value and assert iSend for at least one clock cycle. The module
@@ -63,7 +64,7 @@ module SerialTransmitter
 
   initial
     begin
-      $display("UART transmitter summary");
+      $display("Serial transmitter summary");
       $display("TicksPerBit = %d", TicksPerBit);
       $display("TimerMSB = %d", TimerMSB);
       $display("LastTickOfBit = %d", LastTickOfBit);
