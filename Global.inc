@@ -1,0 +1,3 @@
+`define PowerOnReset
+//`define GlobalReset
+
