@@ -47,7 +47,8 @@ Set parameters `pClockFrequency` and `pBaudRate` to requirements of your design 
 
 For send a byte set `iData` to required value and set `iSend` to 1 for at least one clock cycle. The module takes over data into its own buffer and starts transmitting. The `iData` value has to be valid only for first clock tick after `iSend` was asserted. The signal `oReady` indicates readiness to take over next byte for send. The signal is set to 0 after take over byte to send and during transmitting the start and data bits. After last data bit sent the `oReady` signal is immediatelly set to 1 so a next byte to send can be pass already during transmitting stop bit of previous frame. Because of that there is not any delay before transmitting the next byte.
 
-![SerialTransmitter](waves/SerialTransmitter.png "Transmitting one frame with baudrate at 1/4 of clock frequency")
+Transmitting one frame with baudrate at 1/4 of clock frequency
+![SerialTransmitter](waves/SerialTransmitter.png)
 
 
 
@@ -92,7 +93,8 @@ Set parameters `pClockFrequency` and `pBaudRate` to requirements of your design 
   
 Each time receiver receives one valid frame (byte) it makes it available in `oData` and set `oReceived` to 1 for one clock. If a break or a missing stop bit error occurs in receiving serial data `oBreak` is set to 1 for one clock.
 
-![SerialReceiver](waves/SerialReceiver.png "Receiving one frame with baudrate at 1/4 of clock frequency")
+Receiving one frame with baudrate at 1/4 of clock frequency
+![SerialReceiver](waves/SerialReceiver.png)
 
 
 
