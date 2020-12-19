@@ -3,7 +3,7 @@
   Copyright (c) 2020 Stanislav Jurny (github.com/STjurny) license MIT
 
   Serial data format is 8 data bits, without parity, one stop bit (8N1) without hardware flow control.
-  Please set parameters pClockFrequency and pBaudRate to requirements of your design (pBaudRate can be max 1/4 of 
+  Set parameters pClockFrequency and pBaudRate to requirements of your design (pBaudRate can be max 1/4 of 
   pClockFrequency). For high baud rates check values of parametrization report pInaccuracyPerFrame and 
   pInaccuracyThreshhold to ensure that ClockFrequency / BaudRate ratio generates acceptable inaccuracy of frame length.
   Generally pInaccuracyPerFrame have to be less than pInaccuracyThreshhold. For ideal ratio is pInaccuracyPerFrame = 0.
@@ -12,8 +12,8 @@
   If a break (or missing stop bit error) occurs in receiving serial data oBreak is set to 1 for one clock.
 
   Module supports automatic power on reset (after boot an FPGA), explicit reset over iReset signal or both of them. 
-  Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. For select reset modes edit file 
-  Global.inc.
+  Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the `Global.inc` file to select 
+  reset modes.
 */
 
 `include "Global.inc"
