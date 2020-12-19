@@ -45,7 +45,7 @@ module SerialTransmitter #(
 Set parameters `pClockFrequency` and `pBaudRate` to requirements of your design (`pBaudRate` can be 
   max 1/3 of `pClockFrequency`). For high baud rates check values of parametrization report `pInaccuracyPerFrame` and `pInaccuracyThreshhold` to ensure that `clock frequency / baud rate` ratio generates acceptable inaccuracy of the frame length. Generally `pInaccuracyPerFrame` have to be less than `pInaccuracyThreshhold`. For ideal ratio is `pInaccuracyPerFrame = 0`.
 
-For send a byte value set `iData` to required value and set `iSend` to 1 for at least one clock cycle. The module takes over data into own buffer and starts transmitting. The `iData` value has to be valid only for first clock cycle when `iSend` is asserted. The signal `oReady` indicates readiness to take over next byte for send. The signal is set to 0 after take over byte to send and during transmitting the start and data bits. After last data bit sent the `oReady` signal is immediatelly set to 1 so next byte to send can be pass already during transmitting stop bit of previous frame. Because of that there is not any delay before transmitting next byte.
+For send a byte set `iData` to required value and set `iSend` to 1 for at least one clock cycle. The module takes over data into its own buffer and starts transmitting. The `iData` value has to be valid only for first clock tick after `iSend` was asserted. The signal `oReady` indicates readiness to take over next byte for send. The signal is set to 0 after take over byte to send and during transmitting the start and data bits. After last data bit sent the `oReady` signal is immediatelly set to 1 so a next byte to send can be pass already during transmitting stop bit of previous frame. Because of that there is not any delay before transmitting the next byte.
 
 ![SerialTransmitter](waves/SerialTransmitter.png)
 
@@ -90,9 +90,9 @@ Set parameters `pClockFrequency` and `pBaudRate` to requirements of your design 
   `pClockFrequency`). For high baud rates check values of parametrization report `pInaccuracyPerFrame` and 
   `pInaccuracyThreshhold` to ensure that `clock frequency / baud rate` ratio generates acceptable inaccuracy of frame length. Generally `pInaccuracyPerFrame` have to be less than `pInaccuracyThreshhold`. For ideal ratio is `pInaccuracyPerFrame = 0`.
   
-Each time receiver receives one valid frame (byte) it makes it available in `oData` and set `oReceived` to 1 for one clock. If a break or missing stop bit error occurs in receiving serial data `oBreak` is set to 1 for one clock.
+Each time receiver receives one valid frame (byte) it makes it available in `oData` and set `oReceived` to 1 for one clock. If a break or a missing stop bit error occurs in receiving serial data `oBreak` is set to 1 for one clock.
 
-Module supports automatic power on reset (after boot an FPGA), explicit reset over `iReset` signal or both of them. Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. For selection of reset modes edit file `Global.inc`.
+Module supports automatic power on reset (after load bitstream to the FPGA), explicit reset over `iReset` signal or both of them. Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the `Global.inc` file to select reset modes.
 
 ![SerialReceiver](waves/SerialReceiver.png)
 

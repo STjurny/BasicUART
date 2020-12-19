@@ -8,16 +8,16 @@
   pInaccuracyThreshhold to ensure that ClockFrequency / BaudRate ratio generates acceptable inaccuracy of frame length.
   Generally pInaccuracyPerFrame have to be less than pInaccuracyThreshhold. For ideal ratio is pInaccuracyPerFrame = 0.
 
-  For send a byte value set iData to required value and set iSend to 1 for at least one clock cycle. The module
-  takes over data into own buffer and starts transmitting. The iData value has to be valid only for first cycle
-  when iSend is asserted. The signal oReady indicates readiness to take over next byte for send. The signal is
+  For send a byte set iData to required value and set iSend to 1 for at least one clock cycle. The module
+  takes over data into its own buffer and starts transmitting. The iData value has to be valid only for first tick
+  after iSend was asserted. The signal oReady indicates readiness to take over next byte for send. The signal is
   set to 0 after take over byte to send and during transmitting the start and data bits. After last data bit sent
-  the oReady signal is immediatelly set to 1 so next byte to send can be pass already during transmitting
-  stop bit of previous byte. Because of that there is not any delay before transmitting next byte.
+  the oReady signal is immediatelly set to 1 so a next byte to send can be pass already during transmitting
+  stop bit of previous byte. Because of that there is not any delay before transmitting the next byte.
   
-  Module supports automatic power on reset (after boot an FPGA), explicit reset over iReset signal or both of them. 
-  Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the `Global.inc` file to select 
-  reset modes.
+  Module supports automatic power on reset (after load bitstream to the FPGA), explicit reset over iReset signal or both 
+  of them. Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the Global.inc file 
+  to select reset modes.
 */
 
 `include "Global.inc" 

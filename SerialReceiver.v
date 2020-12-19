@@ -9,11 +9,11 @@
   Generally pInaccuracyPerFrame have to be less than pInaccuracyThreshhold. For ideal ratio is pInaccuracyPerFrame = 0.
   
   Each time receiver receives one valid frame (byte) it makes it available in oData and set oReceived to 1 for one clock.
-  If a break (or missing stop bit error) occurs in receiving serial data oBreak is set to 1 for one clock.
+  If a break or a missing stop bit error occurs in receiving serial data oBreak is set to 1 for one clock.
 
-  Module supports automatic power on reset (after boot an FPGA), explicit reset over iReset signal or both of them. 
-  Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the `Global.inc` file to select 
-  reset modes.
+  Module supports automatic power on reset (after load bitstream to the FPGA), explicit reset over iReset signal or both 
+  of them. Mode of reset is determined by preprocessor symbols GlobalReset and PowerOnReset. Edit the Global.inc file 
+  to select reset modes.
 */
 
 `include "Global.inc"
