@@ -1,6 +1,6 @@
 # BasicUART
 
-Small light-weight synthetisable implementation of UART in Verilog. It uses fixed serial data format 8-N-1 (8 data bits, 1 stop bit, without parity check and without hardware flow control). Baud rate can be parametrized from arbitrary low value up to 1/3 of system clock for transmitter and 1/4 for receiver. On tested FPGA (from iCE40 family) each of the modules uses about 40 LUTs. The modules use only generic Verilog so they can be used on virtually any FPGA. 
+Small light-weight synthetizable implementation of UART in Verilog. It uses fixed serial data format 8-N-1 (8 data bits, 1 stop bit, without parity check and without hardware flow control). Baud rate can be parametrized from arbitrary low value up to 1/3 of system clock for transmitter and 1/4 for receiver. On tested FPGA (from iCE40 family) each of the modules uses about 40 LUTs. The modules use only generic Verilog so they can be used on virtually any FPGA. 
 
 The design was tested on two boards [TinyFPGA-BX](https://tinyfpga.com) with iCE40LP8K chip and [Alchitry-Cu](https://alchitry.com/) with iCE40-HX8K chip. For the low-power LP8K variant of the chip the P&R tool nextpnr declared a maximum clock frequency about 150Mhz for the more powerfull HX8K variant about 220Mhz. 
 
